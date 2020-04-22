@@ -8,9 +8,10 @@ Dockerhub: [hrnchrdl/aws-kubectl](https://hub.docker.com/repository/docker/hnrch
 
 ```bash
 docker run --rm \
- -e AWS_ACCESS_KEY_ID=<aws_access_key_id> \
- -e AWS_SECRET_ACCESS_KEY=<aws_secret_access_key> \
- -e AWS_DEFAULT_REGION=<aws_region_key> \
- hnrchrdl/aws-kubectl \
- /bin/bash -c "aws eks --region eu-central-1 update-kubeconfig --name <name_of_cluster> && kubectl get svc"
+  -e AWS_ACCESS_KEY_ID=<aws_access_key_id> \
+  -e AWS_SECRET_ACCESS_KEY=<aws_secret_access_key> \
+  -e AWS_DEFAULT_REGION=<aws_region_key> \
+  -e CLUSTER_NAME=<name_of_cluster> \
+  hnrchrdl/aws-kubectl \
+  kubectl get pods
 ```
